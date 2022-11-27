@@ -34,7 +34,7 @@ module.exports.add = function (req, res) {
         console.log("error in creating a contact" + err);
         return;
       }
-      console.log("******" + newTodo);
+
       return res.redirect("back");
     }
   );

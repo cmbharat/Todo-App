@@ -2,13 +2,13 @@ const express = require("express");
 const port = 8000;
 
 const app = express();
+const db = require("./config/mongoose");
 
-//setting up ejs view engine
+//setting up view engine
 app.set("view engine", "ejs");
 
-//setting up views folder path
+//setting up  views path
 app.set("views", "./views");
-
 app.use(express.urlencoded());
 app.use(express.static("assets"));
 app.get("delete-todo/:id", function (req, res) {
