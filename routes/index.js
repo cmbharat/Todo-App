@@ -6,7 +6,8 @@ const todoController = require("../controllers/todo_controller");
 
 console.log("router loaded");
 
-router.get("/", todoController.todoList);
-router.get("/create-todo", todoController.create);
-router.get("/delete-todo", todoController.delete);
+router.get("/", todoController.todo);
+router.get("/delete-todo/:id", todoController.delete);
+router.get("/edit-todo", todoController.edit);
+router.post("/create-todo", todoController.add);
 module.exports = router;
