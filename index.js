@@ -2,9 +2,13 @@ const express = require("express");
 const port = 8000;
 
 const app = express();
-const db = require("./config/mongoose");
+
+//setting up ejs view engine
 app.set("view engine", "ejs");
+
+//setting up views folder path
 app.set("views", "./views");
+
 app.use(express.urlencoded());
 app.use(express.static("assets"));
 app.get("delete-todo/:id", function (req, res) {
@@ -12,7 +16,6 @@ app.get("delete-todo/:id", function (req, res) {
 });
 
 app.use("/", require("./routes/index"));
-// app.use("/delete-todo", require("./routes/index"));
 
 app.listen(port, function (err) {
   if (err) {
